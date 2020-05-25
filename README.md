@@ -4,6 +4,7 @@
 ## Contributing
 ### Branches
 `master` : Where our live site is running. Don't push anything other than a working `dev` branch there.
+
 `dev` : Where we push all our changes for testing before publication.
 
 #### Writing new pages/components etc.
