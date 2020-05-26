@@ -21,15 +21,24 @@ const Header = props => (
     </header>
 )
 
+export function NavLink(props){ // Determines whether a navigation link points to the current page
+    if (props.path == props.current) {
+        return(<li><Link to={props.path} className={navbarStyle.currentPage}>{props.name}</Link></li>)
+    }
+    else{
+        return(<li><Link to={props.path}>{props.name}</Link></li>)
+    }
+}
+
 const Navbar = props => (
     <nav className={navbarStyle.navbar}>
         <ul className={navbarStyle.links}>
-            <li><Link to="/" className={navbarStyle.currentPage}>Home</Link></li>
-            <li><Link to="/">Blog</Link></li>
-            <li><Link to="/">Projects</Link></li>
-            <li><Link to="/">People</Link></li>
-            <li><Link to="/">Gallery</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <NavLink path="/" current={props.current} name="Home"/>
+            <NavLink path="/blog/" current={props.current} name="Blog"/>
+            <NavLink path="/projects/" current={props.current} name="Projects"/>
+            <NavLink path="/people/" current={props.current} name="People"/>
+            <NavLink path="/gallery/" current={props.current} name="Gallery"/>
+            <NavLink path="/contact/" current={props.current} name="Contact"/>
         </ul>
     </nav>
 )
@@ -41,7 +50,7 @@ const Footer = props => (
     </footer>
 )
 
-export default function Layout({ children }){
+export default function Layout( props ){
     const data = useStaticQuery(
         graphql`
             query {
@@ -54,16 +63,18 @@ export default function Layout({ children }){
                 siteBuildMetadata {
                     buildTime(formatString: "MMMM DD, YYYY")
                 }
+                sitePage {
+                    path
+                }
             }
         `
     )
-    // console.log(data.siteBuildMetadata.buildTime)
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
-            <Navbar />
+            <Navbar current={props.current}/>
             <main>
-                {children}
+                {props.children}
             </main>
             <Footer buildDate={data.siteBuildMetadata.buildTime} />
         </div>

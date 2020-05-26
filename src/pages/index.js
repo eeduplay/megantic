@@ -2,9 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.location.pathname)
   return (
-    <Layout>
+    <Layout current={props.location.pathname}>
       <h2>Per Aspera Ad Astra</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mi augue, euismod porta dapibus ut, egestas sodales eros.</p>
       <p>Vivamus ullamcorper mi at leo tincidunt, vel convallis dui rutrum. Nam nec posuere nulla. Ut vel molestie leo. Suspendisse vel urna quis tellus ultricies tristique. Phasellus eget orci tristique nibh finibus bibendum. Praesent sit amet elementum libero. </p>
