@@ -47,7 +47,9 @@ export default function Layout({ children }){
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
-            {children}
+            <main>
+                {children}
+            </main>
             <Footer buildDate={data.siteBuildMetadata.buildTime} />
         </div>
     )
