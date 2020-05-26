@@ -27,4 +27,5 @@
     margin-left: 2px;
     position: relative;
     top: 8px;
+    z-index: 10;
 }
