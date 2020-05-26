@@ -12,6 +12,11 @@
 2. Code away!
 3. Once you're done, make a pull request back into `dev`
 
+#### Guidelines
+- Use [CSS Modules](https://www.gatsbyjs.org/tutorial/part-two/#css-modules) for styling whenever possible, one css module per component ideally
+- Components used in several pages should have a dedicated component file. Components used in a single page *may* be defined within the page file.
+- Images are divided in two categories: content and styling. The former is for images used for actual page content, latter for component styling like icons, logos, background images, etc.
+
 ### Setting up your environment
 You'll need to set up your development environment as described [here](https://www.gatsbyjs.org/tutorial/part-zero/) and clone this repository.
 
