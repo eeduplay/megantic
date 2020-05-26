@@ -47,6 +47,7 @@ p {
 p a{
     text-decoration: underline;
     color: white;
+    transition: color 0.15s ease-out;
 }
 
 p a:hover{
@@ -62,7 +63,7 @@ body{
     background-image: url('../images/styling/diableVert.jpg');
     background-size: cover;
     background-position: center top;
-    background-attachment: scroll;
+    background-attachment: fixed;
     color: white;
     margin: 0;
 }
