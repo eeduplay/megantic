@@ -27,6 +27,7 @@ h4 {
     font-family: 'PT Sans', sans-serif;
     color: #ED1B2F;
     font-size: 1.6rem;
+    margin-bottom: 0;
 }
 
 h3 + h4, h2 + h4{
@@ -40,6 +41,7 @@ a, a:hover, a:visited {
 
 p {
     color: rgba(255,255,255, 0.66);
+    margin-top: 10px;
 }
 
 p a{
