@@ -6,6 +6,7 @@ import mcgill from "../images/styling/mcgillLogo.svg"
 import headerStyle from "./styles/header.module.css"
 import footerStyle from "./styles/footer.module.css"
 import layoutStyle from "./styles/layout.module.css"
+import navbarStyle from "./styles/navbar.module.css"
 
 const Header = props => (
     <header>
@@ -18,6 +19,19 @@ const Header = props => (
             <h3>{props.subtitle}</h3>
         </div>
     </header>
+)
+
+const Navbar = props => (
+    <nav className={navbarStyle.navbar}>
+        <ul className={navbarStyle.links}>
+            <li><Link to="/" className={navbarStyle.currentPage}>Home</Link></li>
+            <li><Link to="/">Blog</Link></li>
+            <li><Link to="/">Projects</Link></li>
+            <li><Link to="/">People</Link></li>
+            <li><Link to="/">Gallery</Link></li>
+            <li><Link to="/">Contact</Link></li>
+        </ul>
+    </nav>
 )
 
 const Footer = props => (
@@ -43,10 +57,11 @@ export default function Layout({ children }){
             }
         `
     )
-    console.log(data.siteBuildMetadata.buildTime)
+    // console.log(data.siteBuildMetadata.buildTime)
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
+            <Navbar />
             <main>
                 {children}
             </main>
