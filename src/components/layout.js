@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import logo from "../images/styling/logo.png"
 import mcgill from "../images/styling/mcgillLogo.svg"
+import BackgroundImage from "gatsby-background-image"
 
 import headerStyle from "./styles/header.module.css"
 import footerStyle from "./styles/footer.module.css"
@@ -63,18 +64,33 @@ export default function Layout( props ){
                 siteBuildMetadata {
                     buildTime(formatString: "MMMM DD, YYYY")
                 }
-                sitePage {
-                    path
-                }
             }
         `
     )
+    // These next few lines extract the first child if it is a BackgroundImage
+    // We want it to be featured outside main so it spans the whole width of the layout
+    var content = null
+    var firstChild = null
+    var coverChild = null
+    if (props.children){
+        firstChild = (props.children instanceof Array ? props.children[0] : props.children)
+        if (firstChild.type.name == "BackgroundImage"){
+            coverChild = firstChild
+            content = (props.children instanceof Array ? props.children.slice(1) : null)
+        }
+        else{
+            content = props.children
+        }
+    }
+    
+    console.log(firstChild)
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
             <Navbar current={props.current}/>
+            {coverChild}
             <main>
-                {props.children}
+                {content}
             </main>
             <Footer buildDate={data.siteBuildMetadata.buildTime} />
         </div>

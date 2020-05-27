@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 
 export default function Home(props) {
-  console.log(props.location.pathname)
   return (
     <Layout current={props.location.pathname}>
       <h2>Per Aspera Ad Astra</h2>
