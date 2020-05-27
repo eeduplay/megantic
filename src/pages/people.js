@@ -1,16 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
+import coverStyle from "../components/styles/cover.module.css"
 
 export default function People(props) {
   return (
     <Layout current={props.location.pathname}>
-      {/* <Cover title="Test Cover" legend="yo mama" /> */}
-      <BackgroundImage fluid={props.data.file.childImageSharp.fluid}>
-        <p>Test legend</p>
-        <h1>Test Cover</h1>
+      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+        <Cover title="People" legend="Santa Barbara, 2019" />
       </BackgroundImage>
     </Layout>
   )
@@ -19,11 +19,7 @@ export default function People(props) {
 export const query = graphql`
   query {
     file(relativePath: {eq: "content/covers/santaBarbara.jpg"}) {
-        childImageSharp {
-            fluid(maxWidth: 1216) {
-                ...GatsbyImageSharpFluid_noBase64
-            }
-        }
+        ...CoverQuery
     }
   }
 `
