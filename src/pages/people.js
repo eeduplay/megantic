@@ -9,7 +9,6 @@ import coverStyle from "../components/styles/cover.module.css"
 export default function People(props) {
   return (
     <Layout current={props.location.pathname}>
-      {/* <Cover title="Test Cover" legend="yo mama" /> */}
       <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover title="People" legend="Santa Barbara, 2019" />
       </BackgroundImage>
@@ -20,11 +19,7 @@ export default function People(props) {
 export const query = graphql`
   query {
     file(relativePath: {eq: "content/covers/santaBarbara.jpg"}) {
-        childImageSharp {
-            fluid(maxWidth: 1216) {
-                ...GatsbyImageSharpFluid_tracedSVG
-            }
-        }
+        ...CoverQuery
     }
   }
 `
