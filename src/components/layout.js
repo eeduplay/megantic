@@ -2,7 +2,6 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import logo from "../images/styling/logo.png"
 import mcgill from "../images/styling/mcgillLogo.svg"
-import BackgroundImage from "gatsby-background-image"
 
 import headerStyle from "./styles/header.module.css"
 import footerStyle from "./styles/footer.module.css"
@@ -23,7 +22,7 @@ const Header = props => (
 )
 
 export function NavLink(props){ // Determines whether a navigation link points to the current page
-    if (props.path == props.current) {
+    if (props.path === props.current) {
         return(<li><Link to={props.path} className={navbarStyle.currentPage}>{props.name}</Link></li>)
     }
     else{
@@ -74,7 +73,7 @@ export default function Layout( props ){
     var coverChild = null
     if (props.children){
         firstChild = (props.children instanceof Array ? props.children[0] : props.children)
-        if (firstChild.type.name == "BackgroundImage"){
+        if (firstChild.type.name === "BackgroundImage"){
             coverChild = firstChild
             content = (props.children instanceof Array ? props.children.slice(1) : null)
         }
