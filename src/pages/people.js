@@ -1,11 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styles from "./people.module.css"
+import styles from "../components/styles/people.module.css"
 import Layout from "../components/layout"
 
 import BackgroundImage from "gatsby-background-image"
-
-console.log(styles)
 
 const User = props => (
   <div className={styles.user}>
@@ -27,17 +25,13 @@ export default function People(props) {
         <h1>Test Cover</h1>
       </BackgroundImage>
       <User
-        username="Prof. Andrew Higgins"
+        username={props.data.higgins.nodes[0].frontmatter.name}
         avatar="https://pbs.twimg.com/profile_images/1040042180826542082/pxjqhJb7_400x400.jpg"
-        title="Principal Investigator"
-        excerpt="Yes"
+        title={props.data.higgins.nodes[0].frontmatter.position}
+        excerpt={props.data.higgins.nodes[0].internal.content}
       />
-      <User
-        username="Zhuo Fan Bao"
-        avatar="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/95902149_3489571651057606_7857797651926876160_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=_915FEKlyJEAX_Rycxb&_nc_ht=scontent-yyz1-1.xx&oh=05c87ab8a74e2b956e6acc98e9a850cc&oe=5EF5A59B"
-        title="Nobody"
-        excerpt="No"
-      />
+      <h2>Current Members</h2>
+      <h2>Past Members</h2>
     </Layout>
   )
 }
@@ -50,6 +44,23 @@ export const query = graphql`
                 ...GatsbyImageSharpFluid_noBase64
             }
         }
+    }
+
+    higgins: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(people)/higgins.md$/"}}) {
+      nodes {
+        frontmatter {
+          email
+          github
+          linkedin
+          name
+          position
+          twitter
+          website
+        }
+        internal {
+          content
+        }
+      }
     }
   }
 `
