@@ -71,6 +71,7 @@ export default function Layout( props ){
     var content = null
     var firstChild = null
     var coverChild = null
+    
     if (props.children){
         firstChild = (props.children instanceof Array ? props.children[0] : props.children)
         if (firstChild.type.name === "BackgroundImage"){
@@ -82,15 +83,19 @@ export default function Layout( props ){
         }
     }
     
-    console.log(firstChild)
+    var mainTag = (<main>{content}</main>)
+
+    if (coverChild != null){
+        mainTag = (<main style={{ position: `relative`, top: `-10.8rem` }}>{content}</main>)
+    }
+
+    // console.log(firstChild)
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
             <Navbar current={props.current}/>
             {coverChild}
-            <main>
-                {content}
-            </main>
+            {mainTag}
             <Footer buildDate={data.siteBuildMetadata.buildTime} />
         </div>
     )
