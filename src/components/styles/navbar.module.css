@@ -1,0 +1,22 @@
+.navbar{
+    border-bottom: 2px solid rgba(255,255,255,0.33);
+}
+
+.links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links li{
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.currentPage{
+    border-bottom: 2px solid #ed1b2f;
+}

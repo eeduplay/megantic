@@ -1,0 +1,14 @@
+.container{
+    max-width: 1216px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    background-color: #191D2B;
+    padding: 32px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5)
+}
+
+.container main{
+    max-width: 940px;
+    margin: 0 auto;
+    z-index: 20;
+}
