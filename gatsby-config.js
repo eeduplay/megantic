@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Interstellar Flight`,
     subtitle: `Experimental Research Group`,
-    description: ``,
-    author: `@gatsbyjs`,
+    description: `McGill research group dedicated to the pursuit of interstellar travel`,
+    author: `Emmanuel Duplay, Zhuo Fan Bao, Abtin Ameri`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
