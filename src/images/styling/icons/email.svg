@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 33 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-82,0)">
+        <g id="Email" transform="matrix(1,0,0,1,-81.9848,0)">
+            <rect x="164" y="0" width="32" height="32" style="fill-opacity:0;"/>
+            <g transform="matrix(0.0851278,0,0,0.0851278,-231.768,-113.497)">
+                <path d="M4837.06,1333.66C4940.68,1333.66 5024.81,1417.79 5024.81,1521.41C5024.81,1625.03 4940.68,1709.16 4837.06,1709.16C4733.44,1709.16 4649.31,1625.03 4649.31,1521.41C4649.31,1417.79 4733.44,1333.66 4837.06,1333.66ZM4865.59,1532.58L4842.54,1551.55C4839.35,1554.17 4834.76,1554.17 4831.58,1551.55L4808.52,1532.58L4731.47,1595.99L4942.65,1595.99L4865.59,1532.58ZM4715.41,1586.86L4795.44,1521.01L4715.41,1455.15L4715.41,1586.86ZM4878.67,1521.01L4958.7,1586.86L4958.7,1455.15L4878.67,1521.01ZM4863,1513.18L4944.39,1446.21L4729.72,1446.21L4811.12,1513.18C4812.15,1513.51 4813.13,1514.03 4814,1514.75L4837.06,1533.72L4860.11,1514.75C4860.98,1514.03 4861.97,1513.51 4863,1513.18Z" style="fill:white;"/>
+            </g>
+        </g>
+    </g>
+</svg>
