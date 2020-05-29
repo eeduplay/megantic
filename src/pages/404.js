@@ -20,11 +20,13 @@ export default function NotFound() {
 
   return (
     <Layout>
-      <img src={spaceSign} alt="" style={{ width: `70%`, height: `auto`, display: `block`, margin: `auto` }}/>
-      <h2>Whoops!</h2>
-      <h4>404: Page not found</h4>
-      <p dangerouslySetInnerHTML={ { __html: flavorText }}></p>
-      <p><Link to="/">Back to the launchpad</Link></p>
+      <main>
+        <img src={spaceSign} alt="" style={{ width: `70%`, height: `auto`, display: `block`, margin: `auto` }}/>
+        <h2>Whoops!</h2>
+        <h4>404: Page not found</h4>
+        <p dangerouslySetInnerHTML={ { __html: flavorText }}></p>
+        <p><Link to="/">Back to the launchpad</Link></p>
+      </main>
     </Layout>
   )
 }
