@@ -12,8 +12,8 @@ export default function NotFound() {
   var flavorText = null
   var lines = [
     "Looks like you got lost in the interstellar medium.",
-    "- Our position is correct, except... no Alderaan!<br />- What do you mean? Where is it?<br />- Thats what I\'m trying to tell you, kid. It ain\'t there. It\'s been totally blown away.",
-    "- I hate to say it, but it looks like the system you\'re searching for doesn\'t exist.<br />- That\'s impossible... perhaps the archives are incomplete.",
+    "- Our position is correct, except... no Alderaan!<br />- What do you mean? Where is it?<br />- Thats what I'm trying to tell you, kid. It ain't there. It's been totally blown away.",
+    "- I hate to say it, but it looks like the system you're searching for doesn't exist.<br />- That's impossible... perhaps the archives are incomplete.",
   ]
 
   flavorText = lines[randInt(lines.length)]
