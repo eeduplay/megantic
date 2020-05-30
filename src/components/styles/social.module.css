@@ -1,0 +1,42 @@
+.container {
+    padding: 2px;
+}
+
+a.button {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    opacity: 0.66;
+    transition: opacity 0.15s ease-out;
+    margin: 2px;
+}
+
+a.button:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+a.twitter {
+    background-image: url('../../images/styling/icons/twitter.svg');
+}
+
+a.linkedin {
+    background-image: url('../../images/styling/icons/linkedin.svg');
+}
+
+a.git {
+    background-image: url("../../images/styling/icons/git.svg");
+}
+
+a.email {
+    background-image: url("../../images/styling/icons/email.svg");
+}
+
+a.website {
+    background-image: url("../../images/styling/icons/website.svg");
+}
+
+body{
+    background-color: black;
+}
