@@ -8,8 +8,9 @@ a.button {
     height: 32px;
     background-repeat: no-repeat;
     opacity: 0.66;
-    transition: opacity 0.15s ease-out;
+    transition: all 0.15s ease-out;
     margin: 2px;
+    margin-left: 6px;
 }
 
 a.button:hover {
