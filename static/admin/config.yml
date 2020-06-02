@@ -5,13 +5,15 @@ backend:
 # publish-mode: editorial_workflow
 
 media_folder: "static/images/uploads"
+logo_url: "/images/logo.png"
 
 collections:
   - name: "people"
     label: "Member"
     folder: "content/people"
     create: true
-    slug: "{{name}}"
+    slug: "{{slug}}"
+    identifier_field: "name"
     fields:
       - {label: "Name", name: "name", widget: "string", hint: "Member's first and last name"}
       - {label: "Position", name: "position", widget: "string", hint: "Member's position within our group"}
