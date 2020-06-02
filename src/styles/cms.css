@@ -1,3 +1,12 @@
+html{
+    background-color: #060918;
+    padding-top: 32px;
+    padding-bottom: 100px;
+}
+
 body{
     background-image: None;
+    background-color: #191D2B;
+    padding: 32px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
 }
