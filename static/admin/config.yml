@@ -8,18 +8,21 @@ media_folder: "static/images/uploads"
 
 collections:
   - name: "people"
-    label: "People"
+    label: "Member"
     folder: "content/people"
     create: true
     slug: "{{name}}"
     fields:
       - {label: "Name", name: "name", widget: "string", hint: "Member's first and last name"}
-      - {label: "E-Mail", name: "email", widget: "string", pattern: ['^[\w\.-]+@[\w\.-]+\.[\w\S]{2,10}', "Must be a valid e-mail address"], required: false}
       - {label: "Position", name: "position", widget: "string", hint: "Member's position within our group"}
-      - {label: "Twitter Profile", name: "twitter", widget: "string", hint: "Full url to Twitter profile", pattern: ['^(https:\/\/twitter\.com\/)[\w\d_\S]{1,15}', "Must be a Twitter profile url starting with https://twitter.com/"], required: false}
-      - {label: "Git Profile", name: "git", widget: "string", hint: "Full url to any git repository profile", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete url starting with https://"], required: false}
-      - {label: "LinkedIn Profile", name: "linkedin", widget: "string", hint: "Full url to LinkedIn profile", pattern: ['^(https:\/\/www\.linkedin\.com\/in\/)[\w\d-]+\/', "Must be a LinkedIn profile starting with https://www.linkedin.com/in/"], required: false}
-      - {label: "Website", name: "website", widget: "string", hint: "Full url to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete url"], required: false}
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: 
+          - {label: "Current Member", value: "current"}
+          - {label: "Past Member", value: "past"}
+          - {label: "Permanent Member", value: "permanent"}
+      - {label: "Bio", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editorComponents: []}
       - label: "Profile Picture"
         name: "pic"
         widget: "image"
@@ -27,4 +30,8 @@ collections:
         media_library:
           config:
             multiple: false
-      - {label: "Bio", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editorComponents: []}
+      - {label: "E-Mail", name: "email", widget: "string", pattern: ['^[\w\.-]+@[\w\.-]+\.[\w\S]{2,10}', "Must be a valid e-mail address"], required: false}
+      - {label: "Twitter Profile", name: "twitter", widget: "string", hint: "Full url to Twitter profile", pattern: ['^(https:\/\/twitter\.com\/)[\w\d_\S]{1,15}', "Must be a Twitter profile url starting with https://twitter.com/"], required: false}
+      - {label: "Git Profile", name: "git", widget: "string", hint: "Full url to any git repository profile", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete url starting with https://"], required: false}
+      - {label: "LinkedIn Profile", name: "linkedin", widget: "string", hint: "Full url to LinkedIn profile", pattern: ['^(https:\/\/www\.linkedin\.com\/in\/)[\w\d-]+\/', "Must be a LinkedIn profile starting with https://www.linkedin.com/in/"], required: false}
+      - {label: "Website", name: "website", widget: "string", hint: "Full url to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete url"], required: false}
