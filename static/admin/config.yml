@@ -41,6 +41,8 @@ collections:
   - name: "publications"
     label: "Publication"
     folder: "content/publications"
+    media_folder: ''
+    public_folder: ''
     create: true
     extension: "yml"
     fields:
