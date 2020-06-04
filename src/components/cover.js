@@ -16,7 +16,7 @@ export default function Cover(props){
 export const coverQueryFragment = graphql`
     fragment CoverQuery on File{
         childImageSharp {
-            fluid(maxWidth: 1216) {
+            fluid(maxWidth: 1216, quality: 90, traceSVG: {color: "#060918"}) {
                 ...GatsbyImageSharpFluid_tracedSVG
             }
         }
