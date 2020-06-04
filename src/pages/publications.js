@@ -5,9 +5,10 @@ import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
+import pubStyle from "../components/styles/paper.module.css"
 
 function invertAuthor(flname){
-  itemizedNames = flname.split(' ')
+  var itemizedNames = flname.split(' ')
   var output = itemizedNames.pop() + ','
   itemizedNames.forEach(item => output += ' ' + item)
 
@@ -46,7 +47,7 @@ function chicagoAuthors(authorList){
 export function Paper(props){
   return (
     <div className={pubStyle.container}>
-      <a href={props.filePath} className={pubStyle.download} target="_blank"></a>
+      <a href={props.filePath} className={pubStyle.download} target="_blank" rel="noreferrer" title="Download paper"></a>
       <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). <a href={props.doi}>{props.doi}</a>.</p>
     </div>
   )
@@ -60,6 +61,26 @@ export default function Publications(props) {
       </BackgroundImage>
       <main className={coverStyle.offsetMain}>
         <h1>Publications</h1>
+        <p>Our research group strives to provide all our members, regardless of graduate level, opportunities to publish their work on interstellar flight topics. All of our publications are listed here and available for download.</p>
+        <h2>Journal Articles</h2>
+        <Paper title="Rapid Transit Missions in the Solar System with Laser-Thermal Propulsion" authors={['Andrew J Higgins', 'Zhuo Fan Bao', 'Emmanuel Duplay']} pubName="Journal of Space Engineering" date="Aug 2020" doi="https://doi.org/10.1086/691233" filePath="../../content/publications/baoposter.pdf" />
+        <Paper 
+          title="A Review of Interstellar Flight Research"
+          authors={['Andrew J Higgins', 'Zhuo Fan Bao', 'Emmanuel Duplay', 'John Kokkalis', 'Monika Azmanska', 'Alp Tanriover', 'Hansen Liu', 'Charles Whitman', 'Dan Cornelius-Savu', 'Abdul Rehman-Khan', 'Navneet Kaur']}
+          pubName="Astronautica Ultima"
+          date="Feb 2021"
+          doi="https://doi.org/10.1086/13371337"
+          filePath="../../content/publications/baoposter.pdf"
+        />
+        <h2>Conference Papers</h2>
+        <Paper 
+          title="Please Help Me They Trapped Me in the Shocktube and Won't Let Me Leave to Grad School"
+          authors={['Abtin Ameri']}
+          pubName="AIAA Propulsion and Energy Conference"
+          date="Aug 2019"
+          doi="https://doi.org/10.1086/696969"
+          filePath="../../content/publications/baoposter.pdf"
+        />
       </main>
     </Layout>
   )
