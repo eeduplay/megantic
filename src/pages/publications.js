@@ -40,14 +40,14 @@ function chicagoAuthors(authorList){
     }
   })
 
-  return authorString
+  return authorString + '.'
 }
 
 export function Paper(props){
   return (
-    <div>
+    <div className={pubStyle.container}>
       <a href={props.filePath} className={pubStyle.download} target="_blank"></a>
-      <p></p>
+      <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). <a href={props.doi}>{props.doi}</a>.</p>
     </div>
   )
 }
