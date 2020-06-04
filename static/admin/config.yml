@@ -11,7 +11,7 @@ logo_url: "/logo.png"
 collections:
   - name: "people"
     label: "Member"
-    folder: "content/people"
+    folder: "static/content/people"
     create: true
     slug: "{{slug}}"
     identifier_field: "name"
@@ -40,7 +40,7 @@ collections:
       - {label: "Website", name: "website", widget: "string", hint: "Full URL to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL"], required: false}
   - name: "publications"
     label: "Publication"
-    folder: "content/publications"
+    folder: "static/content/publications"
     media_folder: ''
     public_folder: ''
     create: true
