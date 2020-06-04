@@ -6,6 +6,52 @@ import Cover from "../components/cover"
 import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
 
+function invertAuthor(flname){
+  itemizedNames = flname.split(' ')
+  var output = itemizedNames.pop() + ','
+  itemizedNames.forEach(item => output += ' ' + item)
+
+  return output
+}
+
+function chicagoAuthors(authorList){
+  var authorString = ''
+  var etal = 'et al'
+
+  if (authorList.length > 10){
+    authorList.splice(10)
+    authorList.push(etal)
+  }
+
+  var firstAuthor = authorList.splice(0,1)[0]
+  authorString = invertAuthor(firstAuthor)
+
+  authorList.forEach(function(item, index){
+    if (index === authorList.length - 1){
+      if (item === etal){
+        authorString += ' ' + item
+      }
+      else{
+        authorString += ' and ' + item
+      }
+    }
+    else{
+      authorString += ', ' + item
+    }
+  })
+
+  return authorString
+}
+
+export function Paper(props){
+  return (
+    <div>
+      <a href={props.filePath} className={pubStyle.download} target="_blank"></a>
+      <p></p>
+    </div>
+  )
+}
+
 export default function Publications(props) {
   return (
     <Layout current={props.location.pathname}>
