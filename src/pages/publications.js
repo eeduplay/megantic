@@ -45,10 +45,17 @@ function chicagoAuthors(authorList){
 }
 
 export function Paper(props){
+  var doiElement
+  if (!props.doi){
+    doiElement = null
+  }
+  else {
+    doiElement = (<span><a href={props.doi}>{props.doi}</a>.</span>)
+  }
   return (
     <div className={pubStyle.container}>
       <a href={props.filePath} className={pubStyle.download} target="_blank" rel="noreferrer" title="Download paper"></a>
-      <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). <a href={props.doi}>{props.doi}</a>.</p>
+      <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). {doiElement}</p>
     </div>
   )
 }
@@ -78,7 +85,7 @@ export default function Publications(props) {
           authors={['Abtin Ameri']}
           pubName="AIAA Propulsion and Energy Conference"
           date="Aug 2019"
-          doi="https://doi.org/10.1086/696969"
+          
           filePath="../../content/publications/baoposter.pdf"
         />
       </main>
