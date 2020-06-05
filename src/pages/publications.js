@@ -54,7 +54,7 @@ export function Paper(props){
   }
   return (
     <div className={pubStyle.container}>
-      <a href={props.filePath} className={pubStyle.download} target="_blank" rel="noreferrer" title="Download paper"></a>
+      <a href={props.filePath} className={pubStyle.download} target="_blank" rel="noreferrer" title="Download paper" download></a>
       <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). {doiElement}</p>
     </div>
   )
@@ -77,7 +77,7 @@ export default function Publications(props) {
           pubName="Astronautica Ultima"
           date="Feb 2021"
           doi="https://doi.org/10.1086/13371337"
-          filePath="../../content/publications/baoposter.pdf"
+          filePath="/publications/baoposter.pdf"
         />
         <h2>Conference Papers</h2>
         <Paper 
@@ -86,7 +86,7 @@ export default function Publications(props) {
           pubName="AIAA Propulsion and Energy Conference"
           date="Aug 2019"
           
-          filePath="../../content/publications/baoposter.pdf"
+          filePath="/content/publications/baoposter.pdf"
         />
       </main>
     </Layout>
