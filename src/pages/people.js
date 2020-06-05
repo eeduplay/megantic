@@ -42,30 +42,33 @@ export default function People(props) {
       <h2>Group Members</h2>
       
       {props.data.current.nodes.map(nodes => (
-        <div className={styles.user} key={nodes.frontmatter.name}>
-          <img src={nodes.frontmatter.pic} className={styles.avatar} alt="" />
-          <div className={styles.description}>
-            <div className={styles.social}>
-              <SocialLinks email={nodes.frontmatter.email} website={nodes.frontmatter.website} git={nodes.frontmatter.git} linkedin={nodes.frontmatter.linkedin} twitter={nodes.frontmatter.twitter}/>
-            </div>
-            <h2 className={styles.username}>{nodes.frontmatter.name}</h2>
-            <h4 className={styles.title}>{nodes.frontmatter.position}</h4>
-            <p className={styles.excerpt}>{nodes.internal.content}</p>
-          </div>
-        </div>
+        <User
+          username={nodes.frontmatter.name}
+          avatar={nodes.frontmatter.pic}
+          title={nodes.frontmatter.position}
+          email={nodes.frontmatter.email}
+          website={nodes.frontmatter.website}
+          twitter={nodes.frontmatter.twitter}
+          git={nodes.frontmatter.git}
+          linkedin={nodes.frontmatter.linkedin}
+          excerpt={nodes.internal.content}
+        />
       ))}
 
       <h2>Past Members</h2>
 
       {props.data.past.nodes.map(nodes => (
-        <div className={styles.user} key={nodes.frontmatter.name}>
-          <img src={nodes.frontmatter.pic} className={styles.avatar} alt="" />
-          <div className={styles.description}>
-            <h2 className={styles.username}>{nodes.frontmatter.name}</h2>
-            <h4 className={styles.title}>{nodes.frontmatter.position}</h4>
-            <p className={styles.excerpt}>{nodes.internal.content}</p>
-          </div>
-        </div>
+        <User
+        username={nodes.frontmatter.name}
+        avatar={nodes.frontmatter.pic}
+        title={nodes.frontmatter.position}
+        email={nodes.frontmatter.email}
+        website={nodes.frontmatter.website}
+        twitter={nodes.frontmatter.twitter}
+        git={nodes.frontmatter.git}
+        linkedin={nodes.frontmatter.linkedin}
+        excerpt={nodes.internal.content}
+      />
       ))}
 
     </Layout>
