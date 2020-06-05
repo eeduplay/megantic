@@ -21,6 +21,7 @@ module.exports = {
         path: `${__dirname}/static/content/`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     `gatsby-plugin-sharp`,
