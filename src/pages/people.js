@@ -59,16 +59,16 @@ export default function People(props) {
 
       {props.data.past.nodes.map(nodes => (
         <User
-        username={nodes.frontmatter.name}
-        avatar={nodes.frontmatter.pic}
-        title={nodes.frontmatter.position}
-        email={nodes.frontmatter.email}
-        website={nodes.frontmatter.website}
-        twitter={nodes.frontmatter.twitter}
-        git={nodes.frontmatter.git}
-        linkedin={nodes.frontmatter.linkedin}
-        excerpt={nodes.internal.content}
-      />
+          username={nodes.frontmatter.name}
+          avatar={nodes.frontmatter.pic}
+          title={nodes.frontmatter.position}
+          email={nodes.frontmatter.email}
+          website={nodes.frontmatter.website}
+          twitter={nodes.frontmatter.twitter}
+          git={nodes.frontmatter.git}
+          linkedin={nodes.frontmatter.linkedin}
+          excerpt={nodes.internal.content}
+        />
       ))}
 
     </Layout>
@@ -102,7 +102,7 @@ export const query = graphql`
       }
     }
 
-    current: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(current)/"}}) {
+    current: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(current)/"}}, sort: {order: ASC, fields: frontmatter___name}) {
       nodes {
         frontmatter {
           email
@@ -120,7 +120,7 @@ export const query = graphql`
       }
     }
 
-    past: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(past)/"}}) {
+    past: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(past)/"}}, sort: {order: ASC, fields: frontmatter___name}) {
       nodes {
         frontmatter {
           email
