@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: page-publications
+  branch: dev
 
 # publish-mode: editorial_workflow
 site_url: https://fervent-davinci-9fad2b.netlify.app
