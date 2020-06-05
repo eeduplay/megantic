@@ -68,7 +68,7 @@ export default function Publications(props) {
       </BackgroundImage>
       <main className={coverStyle.offsetMain}>
         <h1>Publications</h1>
-        <p>Our research group strives to provide all our members, regardless of graduate level, opportunities to publish their work on interstellar flight topics. All of our publications are listed here and available for download.</p>
+        <p>Our research group strives to provide all our members, regardless of graduate level, with opportunities to publish their work on interstellar flight topics. All of our publications are listed here and available for download.</p>
         <h2>Journal Articles</h2>
         {props.data.journalPubs.edges.map(({ node }, index) => (
           <Paper 
@@ -110,49 +110,31 @@ export default function Publications(props) {
   )
 }
 
+export const paperDataQuery = graphql`
+  fragment PaperDataQuery on PublicationsYamlEdge {
+    node {
+      title
+      authors
+      date(formatString: "MMM YYYY")
+      doi
+      publication
+      file {
+        relativePath
+      }
+    }
+  }
+`
+
 export const query = graphql`
   query {
     journalPubs: allPublicationsYaml(filter: {type: {eq: "journal"}}, sort: {fields: date, order: DESC}) {
-      edges {
-        node {
-          title
-          authors
-          date(formatString: "MMM YYYY")
-          doi
-          publication
-          file {
-            relativePath
-          }
-        }
-      }
+      edges { ...PaperDataQuery }
     }
     confPubs: allPublicationsYaml(filter: {type: {eq: "conference"}}, sort: {fields: date, order: DESC}) {
-      edges {
-        node {
-          title
-          authors
-          date(formatString: "MMM YYYY")
-          doi
-          publication
-          file {
-            relativePath
-          }
-        }
-      }
+      edges { ...PaperDataQuery }
     }
     otherPubs: allPublicationsYaml(filter: {type: {eq: "other"}}, sort: {fields: date, order: DESC}) {
-      edges {
-        node {
-          title
-          authors
-          date(formatString: "MMM YYYY")
-          doi
-          publication
-          file {
-            relativePath
-          }
-        }
-      }
+      edges { ...PaperDataQuery }
     }
     file(relativePath: {eq: "content/covers/hansenIAC.jpg"}) {
       ...CoverQuery
