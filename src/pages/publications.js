@@ -7,7 +7,7 @@ import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
 import pubStyle from "../components/styles/paper.module.css"
 
-function invertAuthor(flname){
+export function invertAuthor(flname){
   var itemizedNames = flname.split(' ')
   var output = itemizedNames.pop() + ','
   itemizedNames.forEach(item => output += ' ' + item)
@@ -15,7 +15,7 @@ function invertAuthor(flname){
   return output
 }
 
-function chicagoAuthors(authorList){
+export function chicagoAuthors(authorList){
   var authorString = ''
   var etal = 'et al'
 
@@ -50,12 +50,12 @@ export function Paper(props){
     doiElement = null
   }
   else {
-    doiElement = (<span><a href={props.doi}>{props.doi}</a>.</span>)
+    doiElement = (<span><a href={props.doi} target="_blank" rel="noreferrer">{props.doi}</a>.</span>)
   }
   return (
     <div className={pubStyle.container}>
       <a href={props.filePath} className={pubStyle.download} target="_blank" rel="noreferrer" title="Download paper" download></a>
-      <p>{chicagoAuthors(props.authors)} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). {doiElement}</p>
+      <p>{chicagoAuthors(props.authors.slice())} <span className={pubStyle.paperTitle}>"{props.title}."</span> <em>{props.pubName}</em> ({props.date}). {doiElement}</p>
     </div>
   )
 }
@@ -70,24 +70,41 @@ export default function Publications(props) {
         <h1>Publications</h1>
         <p>Our research group strives to provide all our members, regardless of graduate level, opportunities to publish their work on interstellar flight topics. All of our publications are listed here and available for download.</p>
         <h2>Journal Articles</h2>
-        <Paper title="Rapid Transit Missions in the Solar System with Laser-Thermal Propulsion" authors={['Andrew J Higgins', 'Zhuo Fan Bao', 'Emmanuel Duplay']} pubName="Journal of Space Engineering" date="Aug 2020" doi="https://doi.org/10.1086/691233" filePath="../../content/publications/baoposter.pdf" />
-        <Paper 
-          title="A Review of Interstellar Flight Research"
-          authors={['Andrew J Higgins', 'Zhuo Fan Bao', 'Emmanuel Duplay', 'John Kokkalis', 'Monika Azmanska', 'Alp Tanriover', 'Hansen Liu', 'Charles Whitman', 'Dan Cornelius-Savu', 'Abdul Rehman-Khan', 'Navneet Kaur']}
-          pubName="Astronautica Ultima"
-          date="Feb 2021"
-          doi="https://doi.org/10.1086/13371337"
-          filePath="/publications/baoposter.pdf"
-        />
+        {props.data.journalPubs.edges.map(({ node }, index) => (
+          <Paper 
+            key={index}
+            title={node.title}
+            authors={node.authors}
+            pubName={node.publication}
+            doi={node.doi}
+            date={node.date}
+            filePath={'../content/' + node.file.relativePath}
+          />
+        ))}
         <h2>Conference Papers</h2>
-        <Paper 
-          title="Please Help Me They Trapped Me in the Shocktube and Won't Let Me Leave to Grad School"
-          authors={['Abtin Ameri']}
-          pubName="AIAA Propulsion and Energy Conference"
-          date="Aug 2019"
-          
-          filePath="/content/publications/baoposter.pdf"
-        />
+        {props.data.confPubs.edges.map(({ node }, index) => (
+          <Paper 
+            key={index}
+            title={node.title}
+            authors={node.authors}
+            pubName={node.publication}
+            doi={node.doi}
+            date={node.date}
+            filePath={'../content/' + node.file.relativePath}
+          />
+        ))}
+        <h2>Other Publications</h2>
+        {props.data.otherPubs.edges.map(({ node }, index) => (
+          <Paper 
+            key={index}
+            title={node.title}
+            authors={node.authors}
+            pubName={node.publication}
+            doi={node.doi}
+            date={node.date}
+            filePath={'../content/' + node.file.relativePath}
+          />
+        ))}
       </main>
     </Layout>
   )
@@ -103,7 +120,6 @@ export const query = graphql`
           date(formatString: "MMM YYYY")
           doi
           publication
-          type
           file {
             relativePath
           }
@@ -118,7 +134,6 @@ export const query = graphql`
           date(formatString: "MMM YYYY")
           doi
           publication
-          type
           file {
             relativePath
           }
@@ -133,7 +148,6 @@ export const query = graphql`
           date(formatString: "MMM YYYY")
           doi
           publication
-          type
           file {
             relativePath
           }
