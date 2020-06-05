@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25em;
+    margin-top: 0.25em;
+}
+
+.download{
+    width: 48px;
+    height: 48px;
+    background-image: url('../../images/styling/download.svg');
+    background-repeat: no-repeat;
+    flex: 0 0 48px;
+    margin-right: 16px;
+    opacity: 0.66;
+    transition: all 0.15s ease-out;
+}
+
+.download:hover{
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.paperTitle{
+    color: white;
+}
+
+.container p{
+    margin: 0;
+}

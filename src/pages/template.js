@@ -5,7 +5,10 @@ import Layout from "../components/layout"
 export default function PageName(props) {
   return (
     <Layout current={props.location.pathname}>
-      {/* Place some content inside Layout */}
+      {/* Full-width content (e.g. cover photo) goes here */}
+      <main>
+        {/* Partial width content goes here */}
+      </main>
     </Layout>
   )
 }

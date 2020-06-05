@@ -2,9 +2,12 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styles from "../components/styles/people.module.css"
 import Layout from "../components/layout"
+
 import SocialLinks from "../components/social"
+import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
+import coverStyle from "../components/styles/cover.module.css"
 
 const User = props => (
   <div className={styles.user}>
@@ -23,54 +26,54 @@ const User = props => (
 export default function People(props) {
   return (
     <Layout current={props.location.pathname}>
-      {/* <Cover title="Test Cover" legend="yo mama" /> */}
-      <BackgroundImage fluid={props.data.file.childImageSharp.fluid}>
-        <p>Test legend</p>
-        <h1>Test Cover</h1>
+      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+        <Cover legend="Santa Barbara, 2019" />
       </BackgroundImage>
-      <User
-        username={props.data.higgins.nodes[0].frontmatter.name}
-        avatar="https://pbs.twimg.com/profile_images/1040042180826542082/pxjqhJb7_400x400.jpg"
-        title={props.data.higgins.nodes[0].frontmatter.position}
-        email={props.data.higgins.nodes[0].frontmatter.email}
-        website={props.data.higgins.nodes[0].frontmatter.website}
-        twitter={props.data.higgins.nodes[0].frontmatter.twitter}
-        git={props.data.higgins.nodes[0].frontmatter.git}
-        linkedin={props.data.higgins.nodes[0].frontmatter.linkedin}
-        excerpt={props.data.higgins.nodes[0].internal.content}
-      />
-      <h2>Group Members</h2>
-      
-      {props.data.current.nodes.map(nodes => (
-        <User
-          username={nodes.frontmatter.name}
-          avatar={nodes.frontmatter.pic}
-          title={nodes.frontmatter.position}
-          email={nodes.frontmatter.email}
-          website={nodes.frontmatter.website}
-          twitter={nodes.frontmatter.twitter}
-          git={nodes.frontmatter.git}
-          linkedin={nodes.frontmatter.linkedin}
-          excerpt={nodes.internal.content}
-        />
-      ))}
+      <main className={coverStyle.offsetMain}>
+        <h1>People</h1>
+          <User
+            username={props.data.higgins.nodes[0].frontmatter.name}
+            avatar="https://pbs.twimg.com/profile_images/1040042180826542082/pxjqhJb7_400x400.jpg"
+            title={props.data.higgins.nodes[0].frontmatter.position}
+            email={props.data.higgins.nodes[0].frontmatter.email}
+            website={props.data.higgins.nodes[0].frontmatter.website}
+            twitter={props.data.higgins.nodes[0].frontmatter.twitter}
+            git={props.data.higgins.nodes[0].frontmatter.git}
+            linkedin={props.data.higgins.nodes[0].frontmatter.linkedin}
+            excerpt={props.data.higgins.nodes[0].internal.content}
+          />
+          <h2>Group Members</h2>
 
-      <h2>Past Members</h2>
+          {props.data.current.nodes.map(nodes => (
+            <User
+              username={nodes.frontmatter.name}
+              avatar={nodes.frontmatter.pic}
+              title={nodes.frontmatter.position}
+              email={nodes.frontmatter.email}
+              website={nodes.frontmatter.website}
+              twitter={nodes.frontmatter.twitter}
+              git={nodes.frontmatter.git}
+              linkedin={nodes.frontmatter.linkedin}
+              excerpt={nodes.internal.content}
+            />
+          ))}
 
-      {props.data.past.nodes.map(nodes => (
-        <User
-          username={nodes.frontmatter.name}
-          avatar={nodes.frontmatter.pic}
-          title={nodes.frontmatter.position}
-          email={nodes.frontmatter.email}
-          website={nodes.frontmatter.website}
-          twitter={nodes.frontmatter.twitter}
-          git={nodes.frontmatter.git}
-          linkedin={nodes.frontmatter.linkedin}
-          excerpt={nodes.internal.content}
-        />
-      ))}
+          <h2>Past Members</h2>
 
+          {props.data.past.nodes.map(nodes => (
+            <User
+              username={nodes.frontmatter.name}
+              avatar={nodes.frontmatter.pic}
+              title={nodes.frontmatter.position}
+              email={nodes.frontmatter.email}
+              website={nodes.frontmatter.website}
+              twitter={nodes.frontmatter.twitter}
+              git={nodes.frontmatter.git}
+              linkedin={nodes.frontmatter.linkedin}
+              excerpt={nodes.internal.content}
+            />
+          ))}
+      </main>
     </Layout>
   )
 }
@@ -78,11 +81,7 @@ export default function People(props) {
 export const query = graphql`
   query {
     file(relativePath: {eq: "content/covers/santaBarbara.jpg"}) {
-        childImageSharp {
-            fluid(maxWidth: 1216) {
-                ...GatsbyImageSharpFluid_noBase64
-            }
-        }
+        ...CoverQuery
     }
 
     higgins: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(people)/higgins.md$/"}}) {
