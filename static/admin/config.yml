@@ -50,9 +50,9 @@ collections:
       - label: "Authors"
         name: "authors"
         widget: "list"
-        field: {label: Author, name: author, widget: string}
+        field: {label: Author, name: author, widget: string, hint: "Author full name in the following format: Firstname Lastname"}
       - {label: "Publication Date", name: "date", widget: "datetime", dateFormat: "MMM YYYY", timeFormat: false}
-      - {label: "Publication", name: "publication", widget: "string"}
+      - {label: "Publication", name: "publication", widget: "string", hint: "If not formally published, use this field to provide a note"}
       - label: "Type"
         name: "type"
         widget: "select"
