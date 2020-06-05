@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: dev
+
+# publish-mode: editorial_workflow
+site_url: https://fervent-davinci-9fad2b.netlify.app
+
+media_folder: "static/uploads"
+logo_url: "/logo.png"
+
+collections:
+  - name: "people"
+    label: "Member"
+    folder: "static/content/people"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    fields:
+      - {label: "Name", name: "name", widget: "string", hint: "Member's first and last name"}
+      - {label: "Position", name: "position", widget: "string", hint: "Member's position within our group"}
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: 
+          - {label: "Current Member", value: "current"}
+          - {label: "Past Member", value: "past"}
+          - {label: "Permanent Member", value: "permanent"}
+      - {label: "Bio", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editorComponents: []}
+      - label: "Profile Picture"
+        name: "pic"
+        widget: "image"
+        default: "images/defaultProfile.svg"
+        media_library:
+          config:
+            multiple: false
+      - {label: "E-Mail", name: "email", widget: "string", pattern: ['^[\w\.-]+@[\w\.-]+\.[\w\S]{2,10}', "Must be a valid e-mail address"], required: false}
+      - {label: "Twitter Profile", name: "twitter", widget: "string", hint: "Full URL to Twitter profile", pattern: ['^(https:\/\/twitter\.com\/)[\w\d_\S]{1,15}', "Must be a Twitter profile URL starting with https://twitter.com/"], required: false}
+      - {label: "Git Profile", name: "git", widget: "string", hint: "Full URL to any git repository profile", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL starting with https://"], required: false}
+      - {label: "LinkedIn Profile", name: "linkedin", widget: "string", hint: "Full URL to LinkedIn profile", pattern: ['^(https:\/\/www\.linkedin\.com\/in\/)[\w\d-]+\/', "Must be a LinkedIn profile starting with https://www.linkedin.com/in/"], required: false}
+      - {label: "Website", name: "website", widget: "string", hint: "Full URL to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL"], required: false}
+  - name: "publications"
+    label: "Publication"
+    folder: "static/content/publications"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: "yml"
+    fields:
+      - {label: "Paper Title", name: "title", widget: "string"}
+      - label: "Authors"
+        name: "authors"
+        widget: "list"
+        field: {label: Author, name: author, widget: string, hint: "Author full name in the following format: Firstname Lastname"}
+      - {label: "Publication Date", name: "date", widget: "datetime", dateFormat: "MMM YYYY", timeFormat: false}
+      - {label: "Publication", name: "publication", widget: "string", hint: "If not formally published, use this field to provide a note"}
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - {label: "Journal Article", value: "journal"}
+          - {label: "Conference Paper", value: "conference"}
+          - {label: "Other", value: "other"}
+      - {label: "DOI URL", name: "doi", widget: "string", hint: "Full DOI URL starting with https://doi.org/", pattern: ['^(https:\/\/doi\.org\/10)\.[\d\.]+\/[\w\d-\.]+', "Must be valid DOI URL"], required: false}
+      - {label: "Paper PDF", name: "file", widget: "file", hint: "Please upload a PDF file, this will be available for download by visitors", allow_multiple: false}
