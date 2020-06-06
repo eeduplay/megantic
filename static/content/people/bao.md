@@ -2,7 +2,7 @@
 name: Zhuo Fan Bao
 position: Undergraduate Research Assistant
 status: current
-pic: /static/content/people/avatars/defaultprofile.svg
+pic: avatars/defaultprofile.svg
 email: zhuo.bao@mail.mcgill.ca
 twitter: ""
 git: https://github.com/staynoon

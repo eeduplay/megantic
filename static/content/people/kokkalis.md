@@ -2,7 +2,7 @@
 name: John Kokkalis
 position: Undergraduate Research Assistant
 status: current
-pic: /static/content/people/avatars/defaultprofile.svg
+pic: avatars/defaultprofile.svg
 email: john.kokkalis@mail.mcgill.ca
 twitter: ""
 git: ""

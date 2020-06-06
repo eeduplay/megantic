@@ -10,7 +10,7 @@ import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
 
 function User ( props ) {
-  var picpath = props.avatar.replace('/static', '..')
+  var picpath = '../content/' + props.avatar
 
   return(
   <div className={styles.user}>
@@ -37,7 +37,7 @@ export default function People(props) {
         <h1>People</h1>
           <User
             username={props.data.higgins.nodes[0].frontmatter.name}
-            avatar={props.data.higgins.nodes[0].frontmatter.pic}
+            avatar={props.data.higgins.nodes[0].frontmatter.pic.relativePath}
             title={props.data.higgins.nodes[0].frontmatter.position}
             email={props.data.higgins.nodes[0].frontmatter.email}
             website={props.data.higgins.nodes[0].frontmatter.website}
@@ -51,7 +51,7 @@ export default function People(props) {
           {props.data.current.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic}
+              avatar={nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
@@ -67,7 +67,7 @@ export default function People(props) {
           {props.data.past.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic}
+              avatar={nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
@@ -98,7 +98,9 @@ export const query = graphql`
           position
           twitter
           website
-          pic
+          pic {
+            relativePath
+          }
         }
         html
       }
@@ -114,7 +116,9 @@ export const query = graphql`
           position
           twitter
           website
-          pic
+          pic {
+            relativePath
+          }
         }
         html
       }
@@ -130,7 +134,9 @@ export const query = graphql`
           position
           twitter
           website
-          pic
+          pic {
+            relativePath
+          }
         }
         html
       }

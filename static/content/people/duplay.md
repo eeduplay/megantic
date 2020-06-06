@@ -2,7 +2,7 @@
 name: Emmanuel Duplay
 position: Undergraduate Research Assistant
 status: current
-pic: /static/content/people/avatars/defaultprofile.svg
+pic: avatars/defaultprofile.svg
 email: emmanuel.duplay@mail.mcgill.ca
 twitter: ""
 git: ""

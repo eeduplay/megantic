@@ -2,7 +2,7 @@
 name: Hansen Liu
 position: Undergraduate Research Assistant
 status: past
-pic: /static/content/people/avatars/defaultprofile.svg
+pic: avatars/defaultprofile.svg
 email: hansen.liu@mail.mcgill.ca
 twitter: ""
 git: ""
