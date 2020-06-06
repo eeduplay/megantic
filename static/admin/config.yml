@@ -31,7 +31,7 @@ collections:
         widget: "image"
         media_folder: "avatars"
         public_folder: "avatars"
-        default: "defaultProfile.svg"
+        default: "/content/people/avatars/defaultProfile.svg"
         media_library:
           config:
             multiple: false
