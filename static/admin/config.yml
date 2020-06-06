@@ -29,7 +29,9 @@ collections:
       - label: "Profile Picture"
         name: "pic"
         widget: "image"
-        default: "images/defaultProfile.svg"
+        media_folder: "avatars"
+        public_folder: "avatars"
+        default: "defaultProfile.svg"
         media_library:
           config:
             multiple: false
