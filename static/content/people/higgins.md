@@ -2,7 +2,7 @@
 name: Prof. Andrew Higgins
 position: Principal Investigator
 status: permanent
-pic: /static/uploads/defaultprofile.svg
+pic: /static/content/people/avatars/defaultprofile.svg
 email: andrew.higgins@mcgill.ca
 twitter: https://twitter.com/A_J_Higgins
 git: ""
