@@ -1,6 +1,6 @@
 ---
 name: Emmanuel Duplay
-position: Undergraduate Research Assistant
+position: Undergraduate Research Assistant - Laser Thermal Propulsion
 status: current
 pic: avatars/me_smol.jpg
 email: emmanuel.duplay@mail.mcgill.ca
