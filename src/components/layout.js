@@ -36,6 +36,7 @@ const Navbar = props => (
             <NavLink path="/" current={props.current} name="Home"/>
             <NavLink path="/blog/" current={props.current} name="Blog"/>
             <NavLink path="/projects/" current={props.current} name="Projects"/>
+            <NavLink path="/publications/" current={props.current} name="Publications"/>
             <NavLink path="/people/" current={props.current} name="People"/>
             <NavLink path="/gallery/" current={props.current} name="Gallery"/>
             <NavLink path="/contact/" current={props.current} name="Contact"/>
@@ -66,36 +67,13 @@ export default function Layout( props ){
             }
         `
     )
-    // These next few lines extract the first child if it is a BackgroundImage
-    // We want it to be featured outside main so it spans the whole width of the layout
-    var content = null
-    var firstChild = null
-    var coverChild = null
-    
-    if (props.children){
-        firstChild = (props.children instanceof Array ? props.children[0] : props.children)
-        if (firstChild.type.name === "BackgroundImage"){
-            coverChild = firstChild
-            content = (props.children instanceof Array ? props.children.slice(1) : null)
-        }
-        else{
-            content = props.children
-        }
-    }
-    
-    var mainTag = (<main>{content}</main>)
-
-    if (coverChild != null){
-        mainTag = (<main style={{ position: `relative`, top: `-10.8rem` }}>{content}</main>)
-    }
 
     // console.log(firstChild)
     return (
         <div className={layoutStyle.container}>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
             <Navbar current={props.current}/>
-            {coverChild}
-            {mainTag}
+                {props.children}
             <Footer buildDate={data.siteBuildMetadata.buildTime} />
         </div>
     )

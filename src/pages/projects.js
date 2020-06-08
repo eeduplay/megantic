@@ -5,7 +5,9 @@ import Layout from "../components/layout"
 export default function Projects(props) {
   return (
     <Layout current={props.location.pathname}>
-      <h2>Projects</h2>
+      <main>
+        <h2>Projects</h2>
+      </main>
     </Layout>
   )
 }
