@@ -1,6 +1,6 @@
 ---
 name: John Kokkalis
-position: Undergraduate Research Assistant
+position: Undergraduate Research Assistant - Interstellar Dust Impact Mitigation
 status: current
 pic: avatars/defaultprofile.svg
 email: john.kokkalis@mail.mcgill.ca
