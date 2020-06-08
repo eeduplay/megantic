@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: fix-profile-cms
 
 # publish-mode: editorial_workflow
 site_url: https://fervent-davinci-9fad2b.netlify.app
@@ -15,6 +15,8 @@ collections:
     create: true
     slug: "{{slug}}"
     identifier_field: "name"
+    media_folder: "avatars"
+    public_folder: "avatars"
     fields:
       - {label: "Name", name: "name", widget: "string", hint: "Member's first and last name"}
       - {label: "Position", name: "position", widget: "string", hint: "Member's position within our group"}
@@ -29,7 +31,7 @@ collections:
       - label: "Profile Picture"
         name: "pic"
         widget: "image"
-        default: "images/defaultProfile.svg"
+        default: "/content/people/avatars/defaultProfile.svg"
         media_library:
           config:
             multiple: false

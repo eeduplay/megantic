@@ -9,19 +9,23 @@ import Cover from "../components/cover"
 import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
 
-const User = props => (
+function User ( props ) {
+  var picpath = '../content/' + props.avatar
+
+  return(
   <div className={styles.user}>
-    <img src={props.avatar} className={styles.avatar} alt="" />
+    <img src={picpath} className={styles.avatar} alt="" />
     <div className={styles.description}>
       <div className={styles.social}>
         <SocialLinks email={props.email} website={props.website} git={props.git} linkedin={props.linkedin} twitter={props.twitter}/>
       </div>
       <h2 className={styles.username}>{props.username}</h2>
       <h4 className={styles.title}>{props.title}</h4>
-      <p className={styles.excerpt}>{props.excerpt}</p>
+      <div className={styles.excerpt} dangerouslySetInnerHTML={{ __html: props.excerpt}}></div>
     </div>
   </div>
-)
+  )
+}
 
 export default function People(props) {
   return (
@@ -33,28 +37,28 @@ export default function People(props) {
         <h1>People</h1>
           <User
             username={props.data.higgins.nodes[0].frontmatter.name}
-            avatar="https://pbs.twimg.com/profile_images/1040042180826542082/pxjqhJb7_400x400.jpg"
+            avatar={props.data.higgins.nodes[0].frontmatter.pic.relativePath}
             title={props.data.higgins.nodes[0].frontmatter.position}
             email={props.data.higgins.nodes[0].frontmatter.email}
             website={props.data.higgins.nodes[0].frontmatter.website}
             twitter={props.data.higgins.nodes[0].frontmatter.twitter}
             git={props.data.higgins.nodes[0].frontmatter.git}
             linkedin={props.data.higgins.nodes[0].frontmatter.linkedin}
-            excerpt={props.data.higgins.nodes[0].internal.content}
+            excerpt={props.data.higgins.nodes[0].html}
           />
           <h2>Group Members</h2>
 
           {props.data.current.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic}
+              avatar={nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
               twitter={nodes.frontmatter.twitter}
               git={nodes.frontmatter.git}
               linkedin={nodes.frontmatter.linkedin}
-              excerpt={nodes.internal.content}
+              excerpt={nodes.html}
             />
           ))}
 
@@ -63,14 +67,14 @@ export default function People(props) {
           {props.data.past.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic}
+              avatar={nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
               twitter={nodes.frontmatter.twitter}
               git={nodes.frontmatter.git}
               linkedin={nodes.frontmatter.linkedin}
-              excerpt={nodes.internal.content}
+              excerpt={nodes.html}
             />
           ))}
       </main>
@@ -84,7 +88,7 @@ export const query = graphql`
         ...CoverQuery
     }
 
-    higgins: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(people)/higgins.md$/"}}) {
+    higgins: allMarkdownRemark(filter: {frontmatter: {status: {eq: "permanent"}}}) {
       nodes {
         frontmatter {
           email
@@ -94,14 +98,15 @@ export const query = graphql`
           position
           twitter
           website
+          pic {
+            relativePath
+          }
         }
-        internal {
-          content
-        }
+        html
       }
     }
 
-    current: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(current)/"}}, sort: {order: ASC, fields: frontmatter___name}) {
+    current: allMarkdownRemark(filter: {frontmatter: {status: {eq: "current"}}}, sort: {order: ASC, fields: frontmatter___name}) {
       nodes {
         frontmatter {
           email
@@ -111,15 +116,15 @@ export const query = graphql`
           position
           twitter
           website
-          pic
+          pic {
+            relativePath
+          }
         }
-        internal {
-          content
-        }
+        html
       }
     }
 
-    past: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(past)/"}}, sort: {order: ASC, fields: frontmatter___name}) {
+    past: allMarkdownRemark(filter: {frontmatter: {status: {eq: "past"}}}, sort: {order: ASC, fields: frontmatter___name}) {
       nodes {
         frontmatter {
           email
@@ -129,11 +134,11 @@ export const query = graphql`
           position
           twitter
           website
-          pic
+          pic {
+            relativePath
+          }
         }
-        internal {
-          content
-        }
+        html
       }
     }
   }
