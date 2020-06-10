@@ -29,7 +29,7 @@ function User ( props ) {
 
 export default function People(props) {
   return (
-    <Layout current={props.location.pathname}>
+    <Layout current={props.location.pathname} pageTitle="People">
       <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="Santa Barbara, 2019" />
       </BackgroundImage>

@@ -1,5 +1,6 @@
 import React from "react"
 
+import { graphql } from "gatsby"
 import coverStyle from "./styles/cover.module.css"
 
 export default function Cover(props){

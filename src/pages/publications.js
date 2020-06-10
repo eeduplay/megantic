@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Cover from "../components/cover"
 
@@ -62,7 +62,7 @@ export function Paper(props){
 
 export default function Publications(props) {
   return (
-    <Layout current={props.location.pathname}>
+    <Layout current={props.location.pathname} pageTitle="Publications">
       <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="Washington DC, IAC 2019" />
       </BackgroundImage>

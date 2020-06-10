@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import logo from "../images/styling/logo.png"
 import mcgill from "../images/styling/mcgillLogo.svg"
 
@@ -71,6 +72,10 @@ export default function Layout( props ){
     // console.log(firstChild)
     return (
         <div className={layoutStyle.container}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{(props.pageTitle ? props.pageTitle + ' - ' : '')}McGill Interstellar Flight</title>
+            </Helmet>
             <Header title={data.site.siteMetadata.title} subtitle={data.site.siteMetadata.subtitle} />
             <Navbar current={props.current}/>
                 {props.children}
