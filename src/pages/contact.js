@@ -8,7 +8,7 @@ import coverStyle from "../components/styles/cover.module.css"
 
 export default function Contact(props) {
   return (
-    <Layout current={props.location.pathname}>
+    <Layout current={props.location.pathname} pageTitle="Contact Us">
       <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="McGill Campus and Montreal, March 2019" />
       </BackgroundImage>
