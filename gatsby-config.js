@@ -21,6 +21,18 @@ module.exports = {
         path: `${__dirname}/static/content/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "McGill Interstellar Flight Experimental Research Group",
+        short_name: "Interstellar Flight",
+        start_url: "/",
+        icon: `src/images/styling/logo.png`,
+        background_color: `#191D2B`,
+        theme_color: `#ED1B2F`,
+        display: `browser`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
