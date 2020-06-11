@@ -8,6 +8,7 @@ export default function BlogPost({ data }) {
     <Layout>
       <div>
         <h1>{post.frontmatter.title}</h1>
+        <h4>By {post.frontmatter.author} - {post.frontmatter.date}</h4>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
@@ -19,7 +20,9 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
+        author
         title
+        date(formatString: "dddd, MMMM DD, YYYY")
       }
     }
   }

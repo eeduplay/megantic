@@ -11,10 +11,39 @@ export default function Home(props) {
         <p>Vivamus ullamcorper mi at leo tincidunt, vel convallis dui rutrum. Nam nec posuere nulla. Ut vel molestie leo. Suspendisse vel urna quis tellus ultricies tristique. Phasellus eget orci tristique nibh finibus bibendum. Praesent sit amet elementum libero. </p>
         <a className="twitter-timeline" data-lang="en" data-width="300" data-height="600" data-theme="dark" href="https://twitter.com/A_J_Higgins?ref_src=twsrc%5Etfw">Tweets by A_J_Higgins</a>
         <h2>Latest Posts</h2>
-        <h3>First Post!</h3>
-        <h4>Monday May 5, 2020</h4>
-        <p>Lorem ipsum dolor sit amet, <a href="https://google.com">this</a> is a link.</p>
+        {props.data.allMarkdownRemark.nodes.slice(0,2).map(nodes => (
+          <div key={nodes.id}>
+            <h2>
+              <Link
+                to={nodes.fields.slug}
+              >
+                {nodes.frontmatter.title}
+              </Link>
+            </h2>
+            <h4>{nodes.frontmatter.author} - {nodes.frontmatter.date}</h4>
+            <p>{nodes.excerpt}</p>
+          </div>
+        ))}
       </main>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query{
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {order: DESC, fields: frontmatter___date}) {
+      nodes {
+        frontmatter {
+          title
+          date(formatString: "dddd, MMMM DD, YYYY")
+          author
+        }
+        fields {
+          slug
+        }
+        excerpt
+        id
+      }
+    }
+  }
+`
