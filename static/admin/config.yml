@@ -37,9 +37,9 @@ collections:
             multiple: false
       - {label: "E-Mail", name: "email", widget: "string", pattern: ['^[\w\.-]+@[\w\.-]+\.[\w\S]{2,10}', "Must be a valid e-mail address"], required: false}
       - {label: "Twitter Profile", name: "twitter", widget: "string", hint: "Full URL to Twitter profile", pattern: ['^(https:\/\/twitter\.com\/)[\w\d_\S]{1,15}', "Must be a Twitter profile URL starting with https://twitter.com/"], required: false}
-      - {label: "Git Profile", name: "git", widget: "string", hint: "Full URL to any git repository profile", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL starting with https://"], required: false}
+      - {label: "Git Profile", name: "git", widget: "string", hint: "Full URL to any git repository profile", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,10}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL starting with https://"], required: false}
       - {label: "LinkedIn Profile", name: "linkedin", widget: "string", hint: "Full URL to LinkedIn profile", pattern: ['^(https:\/\/www\.linkedin\.com\/in\/)[\w\d-]+\/', "Must be a LinkedIn profile starting with https://www.linkedin.com/in/"], required: false}
-      - {label: "Website", name: "website", widget: "string", hint: "Full URL to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL"], required: false}
+      - {label: "Website", name: "website", widget: "string", hint: "Full URL to a personal website", pattern: ['^[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,10}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?', "Must be a valid, complete URL"], required: false}
   - name: "publications"
     label: "Publication"
     folder: "static/content/publications"
