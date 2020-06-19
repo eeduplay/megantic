@@ -9,6 +9,8 @@ import Cover from "../components/cover"
 import BackgroundImage from "gatsby-background-image"
 import coverStyle from "../components/styles/cover.module.css"
 
+require(`katex/dist/katex.min.css`)
+
 function User ( props ) {
   var picpath = '../content/' + props.avatar
 
