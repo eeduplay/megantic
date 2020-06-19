@@ -30,6 +30,7 @@ module.exports = {
             options: {
               strict: `ignore`,
               errorColor: `#ED1B2F`,
+              throwOnError: false,
             },
           },
         ],

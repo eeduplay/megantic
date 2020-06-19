@@ -78,3 +78,7 @@ body{
 .twitter-timeline{
     float: right;
 }
+
+.katex {
+    color: white;
+}
