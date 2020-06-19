@@ -6,7 +6,7 @@ backend:
 site_url: https://interstellarflight.space
 
 media_folder: "static/uploads"
-logo_url: "/logo.png"
+logo_url: "/login.png"
 
 collections:
   - name: "people"
