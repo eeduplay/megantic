@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Exo:wght@500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html{
     font-size: 10px;
@@ -81,4 +81,24 @@ body{
 
 .katex {
     color: white;
+}
+
+pre{
+    background-color: #060918;
+    border-radius: 5px;
+    padding: 16px;
+    color: rgba(255,255,255, 0.66);
+}
+
+code{
+    font-family: 'DM Mono', monospace;
+    background-color: #060918;
+    font-size: 0.8em;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 5px;
+}
+
+pre code{
+    padding: 0;
 }
