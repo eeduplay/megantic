@@ -20,7 +20,7 @@ export default function Home(props) {
                 {nodes.frontmatter.title}
               </Link>
             </h2>
-            <h4>{nodes.frontmatter.author} - {nodes.frontmatter.date}</h4>
+            <h4>{nodes.frontmatter.author} - {nodes.parent.modifiedTime}</h4>
             <p>{nodes.excerpt}</p>
           </div>
         ))}
@@ -35,7 +35,6 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          date(formatString: "dddd, MMMM DD, YYYY")
           author
         }
         fields {
@@ -43,6 +42,11 @@ export const query = graphql`
         }
         excerpt
         id
+        parent {
+          ... on File {
+            modifiedTime(formatString: "dddd, MMMM DD, YYYY")
+          }
+        }
       }
     }
   }

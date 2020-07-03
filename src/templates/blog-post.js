@@ -9,7 +9,7 @@ export default function BlogPost({ data }) {
       <main>
       <div>
         <h1>{post.frontmatter.title}</h1>
-        <h4>By {post.frontmatter.author} - {post.frontmatter.date}</h4>
+        <h4>By {post.frontmatter.author} - {post.parent.modifiedTime}</h4>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
       </main>
@@ -24,7 +24,11 @@ export const query = graphql`
       frontmatter {
         author
         title
-        date(formatString: "dddd, MMMM DD, YYYY")
+      }
+      parent {
+        ... on File {
+          modifiedTime(formatString: "dddd, MMMM DD, YYYY")
+        }
       }
     }
   }
