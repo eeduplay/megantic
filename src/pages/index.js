@@ -13,13 +13,13 @@ export default function Home(props) {
         <h2>Latest Posts</h2>
         {props.data.allMarkdownRemark.nodes.slice(0,2).map(nodes => (
           <div key={nodes.id}>
-            <h2>
+            <h3>
               <Link
                 to={nodes.fields.slug}
               >
                 {nodes.frontmatter.title}
               </Link>
-            </h2>
+            </h3>
             <h4>{nodes.frontmatter.author} - {nodes.parent.modifiedTime}</h4>
             <p>{nodes.excerpt}</p>
           </div>

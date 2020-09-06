@@ -2,11 +2,18 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { node } from "prop-types"
+import Cover from "../components/cover"
+
+import BackgroundImage from "gatsby-background-image"
+import coverStyle from "../components/styles/cover.module.css"
 
 export default function Blog(props) {
   return (
     <Layout current={props.location.pathname} pageTitle="Blog">
-      <main>
+      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+        <Cover legend="Studying rocket feed systems, July 2019" />
+      </BackgroundImage>
+      <main className={coverStyle.offsetMain}>
         <h1>Blog</h1>
         
         {props.data.allMarkdownRemark.nodes.map(nodes => (
@@ -46,6 +53,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    file(relativePath: {eq: "content/covers/board.jpg"}) {
+      ...CoverQuery
     }
   }
 `
