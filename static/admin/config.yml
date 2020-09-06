@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: component-blog
 
 # publish-mode: editorial_workflow
 site_url: https://interstellarflight.space
@@ -64,3 +64,15 @@ collections:
           - {label: "Other", value: "other"}
       - {label: "DOI URL", name: "doi", widget: "string", hint: "Full DOI URL starting with https://doi.org/", pattern: ['^(https:\/\/doi\.org\/10)\.[\d\.]+\/[\w\d-\.]+', "Must be valid DOI URL"], required: false}
       - {label: "Paper PDF", name: "file", widget: "file", hint: "Please upload a PDF file, this will be available for download by visitors", allow_multiple: false}
+  - name: "blog"
+    label: "Blog"
+    folder: "static/content/blog"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Post Content", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editorComponents: []}
