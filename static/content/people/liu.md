@@ -1,6 +1,6 @@
 ---
 name: Hansen Liu
-position: Undergraduate Research Assistant
+position: Undergraduate Research Assistant - Lightsail Dynamics
 status: past
 pic: avatars/defaultprofile.svg
 email: hansen.liu@mail.mcgill.ca
