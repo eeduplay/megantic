@@ -11,11 +11,11 @@ export default function SocialLinks ( props ) {
     const isGit = Boolean(props.git);
     return (
         <div className={socialStyles.container}>
-            {isEmail && <a href={"mailto:" + props.email} className={[socialStyles.email, socialStyles.button].join(" ")}></a>}
-            {isWebsite && <a href={props.website} className={[socialStyles.website, socialStyles.button].join(" ")}></a>}
-            {isLinkedin && <a href={props.linkedin} className={[socialStyles.linkedin, socialStyles.button].join(" ")}></a>}
-            {isGit && <a href={props.git} className={[socialStyles.git, socialStyles.button].join(" ")}></a>}
-            {isTwitter && <a href={props.twitter} className={[socialStyles.twitter, socialStyles.button].join(" ")}></a>}
+            {isEmail && <a target="_blank" rel="noreferrer" href={"mailto:" + props.email} className={[socialStyles.email, socialStyles.button].join(" ")}></a>}
+            {isWebsite && <a target="_blank" rel="noreferrer" href={props.website} className={[socialStyles.website, socialStyles.button].join(" ")}></a>}
+            {isLinkedin && <a target="_blank" rel="noreferrer" href={props.linkedin} className={[socialStyles.linkedin, socialStyles.button].join(" ")}></a>}
+            {isGit && <a target="_blank" rel="noreferrer" href={props.git} className={[socialStyles.git, socialStyles.button].join(" ")}></a>}
+            {isTwitter && <a target="_blank" rel="noreferrer" href={props.twitter} className={[socialStyles.twitter, socialStyles.button].join(" ")}></a>}
         </div>
     )
 }

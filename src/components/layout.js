@@ -16,8 +16,8 @@ const Header = props => (
             <a href="https://mcgill.ca" className={headerStyle.mcgill} target="_blank" rel="noreferrer">
                 <img src={mcgill} alt="McGill Logo" height="20" />
             </a>
-            <Link to="/"><h1>{props.title}</h1></Link>
-            <h3>{props.subtitle}</h3>
+            <Link to="/"><h2>{props.title}<br/>{props.subtitle}</h2></Link>
+            {/* <h3>{props.subtitle}</h3> */}
         </div>
     </header>
 )
@@ -35,11 +35,12 @@ const Navbar = props => (
     <nav className={navbarStyle.navbar}>
         <ul className={navbarStyle.links}>
             <NavLink path="/" current={props.current} name="Home"/>
-            <NavLink path="/blog/" current={props.current} name="Blog"/>
-            <NavLink path="/projects/" current={props.current} name="Projects"/>
+            {/* <NavLink path="/blog/" current={props.current} name="Blog"/> */}
+            {/* <NavLink path="/projects/" current={props.current} name="Projects"/> */}
             <NavLink path="/publications/" current={props.current} name="Publications"/>
+            <NavLink path="/symposium/" current={props.current} name="8th Interstellar Symposium"/>
             <NavLink path="/people/" current={props.current} name="People"/>
-            <NavLink path="/gallery/" current={props.current} name="Gallery"/>
+            {/* <NavLink path="/gallery/" current={props.current} name="Gallery"/> */}
             <NavLink path="/contact/" current={props.current} name="Contact"/>
         </ul>
     </nav>

@@ -27,7 +27,7 @@ module.exports = {
         name: "McGill Interstellar Flight Experimental Research Group",
         short_name: "Interstellar Flight",
         start_url: "/",
-        icon: `src/images/styling/logo.png`,
+        icon: `src/images/styling/favicon.png`,
         background_color: `#191D2B`,
         theme_color: `#ED1B2F`,
         display: `browser`,
@@ -36,6 +36,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-twitter`,
     {
