@@ -14,7 +14,7 @@
 .links li{
     display: inline-block;
     margin-left: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 2.0rem;
 }
 
