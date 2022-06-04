@@ -1,6 +1,6 @@
 ---
 name: Zhuo Fan Bao
-position: Undergraduate Research Assistant
+position: Undergraduate Research Assistant - Laser Thermal Propulsion
 status: current
 pic: avatars/defaultprofile.svg
 email: zhuo.bao@mail.mcgill.ca
