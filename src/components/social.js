@@ -1,6 +1,6 @@
 import React from "react"
 
-import socialStyles from "./styles/social.module.css"
+import * as socialStyles from "./styles/social.module.css"
 
 export default function SocialLinks ( props ) {
 
