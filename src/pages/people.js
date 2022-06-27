@@ -51,7 +51,7 @@ export default function People(props) {
           {props.data.current.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic.relativePath}
+              avatar={nodes.frontmatter.pic === null ? 'avatars/defaultprofile.svg' : nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
@@ -67,7 +67,7 @@ export default function People(props) {
           {props.data.past.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic.relativePath}
+              avatar={nodes.frontmatter.pic === null ? 'people/avatars/defaultprofile.svg' : nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
