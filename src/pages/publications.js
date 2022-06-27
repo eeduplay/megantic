@@ -9,8 +9,9 @@ import * as pubStyle from "../components/styles/paper.module.css"
 
 function invertAuthor(flname){
   var itemizedNames = flname.split(' ')
-  var output = itemizedNames.pop() + ','
-  itemizedNames.forEach(item => output += ' ' + item)
+  var firstName = itemizedNames.shift()
+  var output = itemizedNames.join(' ')
+  output += ', ' + firstName
 
   return output
 }
