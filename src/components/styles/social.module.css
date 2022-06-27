@@ -11,6 +11,8 @@ a.button {
     transition: all 0.15s ease-out;
     margin: 2px;
     margin-left: 6px;
+    color: rgba(0,0,0,0);
+    font-size: 0;
 }
 
 a.button:hover {
