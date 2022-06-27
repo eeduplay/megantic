@@ -31,7 +31,7 @@ collections:
       - label: "Profile Picture"
         name: "pic"
         widget: "image"
-        default: "/content/people/avatars/defaultProfile.svg"
+        default: "/content/people/avatars/defaultprofile.svg"
         media_library:
           config:
             multiple: false
@@ -54,7 +54,7 @@ collections:
         widget: "list"
         field: {label: Author, name: author, widget: string, hint: "Author full name in the following format: Firstname Lastname"}
       - {label: "Publication Date", name: "date", widget: "datetime", dateFormat: "MMM YYYY", timeFormat: false}
-      - {label: "Publication", name: "publication", widget: "string", hint: "If not formally published, use this field to provide a note"}
+      - {label: "Publication Name", name: "publication", widget: "string", hint: "The name of the conference/journal/etc. in which the paper was published. If not formally published, use this field to provide a note"}
       - label: "Type"
         name: "type"
         widget: "select"
