@@ -1,7 +1,6 @@
 ---
 name: Sebastian Rodriguez Rosero
-position: Undergraduate Research Assistant  - Laser thermal propulsion/
-  Imploding detonation experiment.
+position: Undergraduate Research Assistant - Laser thermal propulsion/Imploding detonation experiment
 status: current
 pic: avatars/sebastian-rodriguez-rosero.jpg
 linkedin: https://www.linkedin.com/in/sebastian-rodriguez-rosero-984aa51b5/
