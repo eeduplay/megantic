@@ -2,7 +2,7 @@
 name: Abdul Rehman Khan
 position: Mechanical, Industrial and Advanced Manufacturing Engineer.
 status: past
-pic: avatars/defaultprofile.svg
+pic: avatars/abdul.jpg
 email: abdul.r.khan@mail.mcgill.ca
 linkedin: https://www.linkedin.com/in/abdul-r-khan95/
 ---
