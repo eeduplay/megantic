@@ -4,18 +4,19 @@ import Layout from "../components/layout"
 import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
-import coverStyle from "../components/styles/cover.module.css"
-import pubStyle from "../components/styles/paper.module.css"
+import * as coverStyle from "../components/styles/cover.module.css"
+import * as pubStyle from "../components/styles/paper.module.css"
 
-export function invertAuthor(flname){
+function invertAuthor(flname){
   var itemizedNames = flname.split(' ')
-  var output = itemizedNames.pop() + ','
-  itemizedNames.forEach(item => output += ' ' + item)
+  var firstName = itemizedNames.shift()
+  var output = itemizedNames.join(' ')
+  output += ', ' + firstName
 
   return output
 }
 
-export function chicagoAuthors(authorList){
+function chicagoAuthors(authorList){
   var authorString = ''
   var etal = 'et al'
 
@@ -44,7 +45,7 @@ export function chicagoAuthors(authorList){
   return authorString + '.'
 }
 
-export function Paper(props){
+function Paper(props){
   var doiElement
   if (!props.doi){
     doiElement = null
@@ -63,10 +64,10 @@ export function Paper(props){
 export default function Publications(props) {
   return (
     <Layout current={props.location.pathname} pageTitle="Publications">
-      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+      {/* <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="Washington DC, IAC 2019" />
-      </BackgroundImage>
-      <main className={coverStyle.offsetMain}>
+      </BackgroundImage> */}
+      <main>
         <h1>Publications</h1>
         <p>Our research group strives to provide all our members, regardless of graduate level, with opportunities to publish their work on interstellar flight topics. All of our publications are listed here and available for download.</p>
         <h2>Journal Articles</h2>

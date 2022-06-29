@@ -4,15 +4,15 @@ import Layout from "../components/layout"
 import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
-import coverStyle from "../components/styles/cover.module.css"
+import * as coverStyle from "../components/styles/cover.module.css"
 
 export default function Contact(props) {
   return (
     <Layout current={props.location.pathname} pageTitle="Contact Us">
-      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+      {/* <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="McGill Campus and Montreal, March 2019" />
-      </BackgroundImage>
-      <main className={coverStyle.offsetMain}>
+      </BackgroundImage> */}
+      <main>
         <h1>Contact Us</h1>
         <p><a href="mailto:andrew.higgins@mcgill.ca">andrew.higgins@mcgill.ca</a></p>
         <p>Macdonald Engineering Building, Room 270<br/>

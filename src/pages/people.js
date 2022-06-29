@@ -1,13 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styles from "../components/styles/people.module.css"
+import * as styles from "../components/styles/people.module.css"
 import Layout from "../components/layout"
 
 import SocialLinks from "../components/social"
 import Cover from "../components/cover"
 
 import BackgroundImage from "gatsby-background-image"
-import coverStyle from "../components/styles/cover.module.css"
+import * as coverStyle from "../components/styles/cover.module.css"
 
 function User ( props ) {
   var picpath = '../content/' + props.avatar
@@ -30,10 +30,10 @@ function User ( props ) {
 export default function People(props) {
   return (
     <Layout current={props.location.pathname} pageTitle="People">
-      <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
+      {/* <BackgroundImage fluid={props.data.file.childImageSharp.fluid} className={coverStyle.cover} preserveStackingContext={true}>
         <Cover legend="Santa Barbara, 2019" />
-      </BackgroundImage>
-      <main className={coverStyle.offsetMain}>
+      </BackgroundImage> */}
+      <main>
         <h1>People</h1>
           <User
             username={props.data.higgins.nodes[0].frontmatter.name}
@@ -51,7 +51,7 @@ export default function People(props) {
           {props.data.current.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic.relativePath}
+              avatar={nodes.frontmatter.pic === null ? 'avatars/defaultprofile.svg' : nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}
@@ -67,7 +67,7 @@ export default function People(props) {
           {props.data.past.nodes.map(nodes => (
             <User
               username={nodes.frontmatter.name}
-              avatar={nodes.frontmatter.pic.relativePath}
+              avatar={nodes.frontmatter.pic === null ? 'people/avatars/defaultprofile.svg' : nodes.frontmatter.pic.relativePath}
               title={nodes.frontmatter.position}
               email={nodes.frontmatter.email}
               website={nodes.frontmatter.website}

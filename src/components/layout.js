@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet"
 import logo from "../images/styling/logo.png"
 import mcgill from "../images/styling/mcgillLogo.svg"
 
-import headerStyle from "./styles/header.module.css"
-import footerStyle from "./styles/footer.module.css"
-import layoutStyle from "./styles/layout.module.css"
-import navbarStyle from "./styles/navbar.module.css"
+import * as headerStyle from "./styles/header.module.css"
+import * as footerStyle from "./styles/footer.module.css"
+import * as layoutStyle from "./styles/layout.module.css"
+import * as navbarStyle from "./styles/navbar.module.css"
 
 const Header = props => (
     <header>

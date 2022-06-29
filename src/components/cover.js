@@ -1,13 +1,13 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import coverStyle from "./styles/cover.module.css"
+import * as coverStyle from "./styles/cover.module.css"
 
 export default function Cover(props){
     return(
         <div className={coverStyle.coverContainer}>
             <div className={coverStyle.titleContainer}>
-                <p className={coverStyle.legend}>{props.legend}</p>
+                <p>{props.legend}</p>
                 {/* <h1 className={coverStyle.title}>{props.title}</h1> */}
             </div>
         </div>
