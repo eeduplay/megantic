@@ -2,7 +2,7 @@
 name: "Gabriel Dubé  "
 position: Undergraduate Research Assistant - Laser Thermal Propulsion
 status: current
-pic: avatars/yes-sir-salute.gif
+pic: avatars/gabriel-dubé.jpg
 email: gabriel.dube2@mail.mcgill.ca
 linkedin: https://www.linkedin.com/in/gabriel-r-dube/https://www.linkedin.com/in/gabriel-r-dube/
 ---
