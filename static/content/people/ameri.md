@@ -2,7 +2,7 @@
 name: Abtin Ameri
 position: Undergraduate Research Assistant
 status: past
-pic: avatars/defaultprofile.svg
+pic: avatars/kermit.gif
 email: abtin.ameri@mail.mcgill.ca
 twitter: ""
 git: ""
