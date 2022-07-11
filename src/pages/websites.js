@@ -5,7 +5,7 @@ export default function Websites(props) {
   return (
     <Layout current={props.location.pathname}>
       <main>
-        <h2>Websites</h2>
+        <h2>Other Websites</h2>
         <p>https://irg.space/</p>
         <p>https://www.centauri-dreams.org/</p>
         <p>https://i4is.org/</p>
