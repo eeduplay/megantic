@@ -42,6 +42,7 @@ const Navbar = props => (
             <NavLink path="/people/" current={props.current} name="People"/>
             {/* <NavLink path="/gallery/" current={props.current} name="Gallery"/> */}
             <NavLink path="/contact/" current={props.current} name="Contact"/>
+            <NavLink path="/websites/" current={props.current} name="Other Websites"/>
         </ul>
     </nav>
 )
