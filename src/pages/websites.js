@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-export default function Home(props) {
+export default function Websites(props) {
   return (
     <Layout current={props.location.pathname}>
       <main>
