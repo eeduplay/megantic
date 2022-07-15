@@ -2,7 +2,7 @@
 name: Gur Lal
 position: Research Assistant
 status: current
-pic: avatars/picture-of-gur-.png
+pic: avatars/picture-gur.jpg
 email: gurlal5231@gmail.com
 linkedin: https://www.linkedin.com/in/gur-lal-933401242/
 ---
