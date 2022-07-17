@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Interstellar Flight`,
@@ -45,6 +49,27 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/utils/cms.js`
       },
+    },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: process.env.TWITTER_API_KEY,
+          consumer_secret: process.env.TWITTER_API_SECRET,
+          bearer_token: process.env.TWITTER_API_BEARER,
+        },
+        queries: {
+          latestTweets: {
+            endpoint: "statuses/user_timeline",
+            params: {
+              screen_name: "McGill_AdAstra",
+              count: 20,
+              exclude_replies: true,
+              include_rts: true,
+            },
+          },
+        },
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
