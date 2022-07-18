@@ -9,5 +9,4 @@ git: ""
 linkedin: ""
 website: ""
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Hansen joined the research group at its inception, studying interstellar lightsail dynamics as part of his undergraduate honours thesis in mechanical engineering. Using the shock tube developed by Abdul and his team, Hansen specifically investigated the effects of an uneven laser-pressure field on the stability of potential lightsail materials. He now works as a software developer for Shopify.
