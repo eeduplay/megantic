@@ -6,4 +6,4 @@ pic: avatars/picture-gur.jpg
 email: gurlal5231@gmail.com
 linkedin: https://www.linkedin.com/in/gur-lal-933401242/
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In the past I've interned at CRIM and Expedia working on artificial intelligence and web development, respectively. I've also participated in robotics for several years. Using this experience, I'm currently working on web design, radiation cooling experiments and quadrupole ion traps. I am planning on becoming an aerospace engineer in the future.
