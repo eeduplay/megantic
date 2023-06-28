@@ -12,7 +12,7 @@ export default function Websites(props) {
         <a href="https://www.centauri-dreams.org/" target="_blank" rel="noreferrer"> 
         <StaticImage 
         src="../images/content/other-website-logo/centauri-dreams-logo.jpg" 
-        width="400px"
+        width="400" height="150"
         alt="Centauri Dreams"
         />
         </a>
@@ -21,7 +21,7 @@ export default function Websites(props) {
         <a href="https://irg.space/" target="_blank" rel="noreferrer"> 
         <StaticImage 
         src="../images/content/other-website-logo/IRG-space-logo.jpg" 
-        width="200px"
+        width="200" height="200"
         alt="IRG Space"
         />
         </a>
@@ -30,7 +30,7 @@ export default function Websites(props) {
         <a href="https://i4is.org/" target="_blank" rel="noreferrer"> 
         <StaticImage 
         src="../images/content/other-website-logo/I4IS-logo.jpg" 
-        width="200px"
+        width="200" height="200"
         alt="I4IS"
         />
         </a>
@@ -39,7 +39,7 @@ export default function Websites(props) {
         <a href="https://tauzero.aero/" target="_blank" rel="noreferrer"> 
         <StaticImage 
         src="../images/content/other-website-logo/TauZero-foundation-logo.jpg" 
-        width="200px"
+        width="200" 
         alt="TauZero"
         />
         </a>
@@ -48,8 +48,7 @@ export default function Websites(props) {
         <a href="https://www.deepspace.ucsb.edu/projects/starlight/" target="_blank" rel="noreferrer"> 
         <StaticImage 
         src="../images/content/other-website-logo/UCSB-logo.jpg" 
-        width="200px"
-        height="300px"
+        width="200" height="200"
         alt="USCB"
         />
         </a>
