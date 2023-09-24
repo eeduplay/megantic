@@ -95,6 +95,10 @@ export default function Publications(props) {
           />
         ))}
         <h2>Other Publications</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ABLnJ31AKkc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VrJybNgeU-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uaK5e4pAAuc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        {/*
         {props.data.otherPubs.edges.map(({ node }, index) => (
           <Paper 
             key={index}
@@ -106,6 +110,7 @@ export default function Publications(props) {
             filePath={'../content/' + node.file.relativePath}
           />
         ))}
+        */}
       </main>
     </Layout>
   )

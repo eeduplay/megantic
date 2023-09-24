@@ -1,12 +1,12 @@
 ---
 name: John Kokkalis
-position: Undergraduate Research Assistant - Interstellar Dust Impact Mitigation
+position: Graduate Researcher  - Interplanetary Dust Impact Mitigation/General Fusion
 status: current
 pic: avatars/picture_john.png
 email: john.kokkalis@mail.mcgill.ca
-twitter: ""
+twitter: https://twitter.com/john_kokkalis
 git: ""
 linkedin: https://www.linkedin.com/in/john-kokkalis-70b0aa137/
 website: ""
 ---
-I am a senior honours Mechanical Engineering student at McGill University. My current research involves investigating the plausibility of laser-ablation of interplanetary media during the acceleration phase of laser-driven interstellar travel, under the supervision of Professor Andrew Higgins. Upon graduation, I hope to pursue graduate studies in aerospace engineering.
+I am an M.Sc. Student in Mechanical Engineering at McGill University currently working on the acoustic interaction via impulsive loading in a piston-driver system for magnetized target fusion. In addition to my main research project, my undergraduate honours thesis involved investigating the plausibility of laser-ablation of interplanetary media during the acceleration phase of laser-driven interstellar travel. My undergradute and graduate research projects are under the supervision of Professor Andrew Higgins.

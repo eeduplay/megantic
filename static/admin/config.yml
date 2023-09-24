@@ -64,6 +64,16 @@ collections:
           - {label: "Other", value: "other"}
       - {label: "DOI URL", name: "doi", widget: "string", hint: "Full DOI URL starting with https://doi.org/", pattern: ['^(https:\/\/doi\.org\/10)\.[\d\.]+\/[\w\d-\.]+', "Must be valid DOI URL"], required: false}
       - {label: "Paper PDF", name: "file", widget: "file", hint: "Please upload a PDF file, this will be available for download by visitors", allow_multiple: false}
+  - name: "presentations"
+    label: "Conference Presentations"
+    folder: "static/content/presentations"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    extension: "yml"
+    fields:
+      - {label: "Presentation Title", name: "title", widget: "string"}
+      - {label: "URL", name: "link", widget: "string", hint: "Full URL to a conference presentation" }
   - name: "blog"
     label: "Blog"
     folder: "static/content/blog"
