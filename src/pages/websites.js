@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
 
+// Adding a random comment to try out new push/merge/deploy 
+
 export default function Websites(props) {
   return (
     <Layout current={props.location.pathname}>
